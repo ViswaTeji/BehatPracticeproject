@@ -15,14 +15,20 @@ default:
         browser: chrome
         wd_host: http://127.0.0.1:4444/wd/hub
         capabilities:
-           chrome:
+          extra_capabilities:
+            chrome:
+            chromeOptions:
+              w3c: false
             switches:
-            #- "--start-maximized"
-            - "--start-fullscreen"
-            #- "--window-size=1200,600"
+             #- "--start-maximized"
+             - "--start-fullscreen"
+             #- "--window-size=1200,600"
+
+
       browser_name: chrome
       default_session: selenium2
       #base_url: https://www.programsbuzz.com/
       #base_url: https://my-drupal9-site.ddev.site/en
-      base_url: http://autopract.com
+      #base_url: http://autopract.com
+      base_url: http://automationpractice.com
 

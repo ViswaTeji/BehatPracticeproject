@@ -153,6 +153,27 @@ JS;
             throw new \Exception("Scroll Into View Failed. Check Your Script");
         }
     }
+    /**
+     * @Then /^I switch to windows$/
+     */
+    public function iSwitchToParentWindows()
+    {
+        $windowNames = $this->getSession()->getWindowNames();
+
+        if(count($windowNames) > 1)
+        {
+            $this->getSession()->switchToWindow($windowNames[0]);
+            print($this->getSession()->getCurrentUrl());
+        }
+    }
+    /**
+     * @When I click on facebook icon
+     */
+    public function iClickOnFacebookIcon()
+    {
+        $page = $this->getSession()->getPage();
+        $page->find('css', "li.facebook")->click();
+    }
 
 }
 
